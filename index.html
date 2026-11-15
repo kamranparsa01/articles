@@ -8,8 +8,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Writing Archive</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -99,28 +102,48 @@
     }
 
     @media (max-width: 600px) {
-      .container { padding-top: 55px; }
-      h1 { font-size: 36px; }
+      .container {
+        padding-top: 55px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
+
 <body>
   <main class="container">
+
     <div class="eyebrow">Personal Archive</div>
+
     <h1>Writing Archive</h1>
-    <p class="intro">A collection of essays, thoughts, and other writings.</p>
+
+    <p class="intro">
+      A collection of essays, thoughts, and other writings.
+    </p>
 
     <div class="section-title">Selected Writing</div>
 
     {% for post in site.posts %}
     <article>
-      <div class="date">{{ post.date | date: "%B %d, %Y" }}</div>
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <div class="date">
+        {{ post.date | date: "%B %d, %Y" }}
+      </div>
+
+      <h2>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+
       <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
     </article>
     {% endfor %}
 
     <footer>© 2026 · WRITING ARCHIVE</footer>
+
   </main>
 </body>
 </html>
