@@ -1,0 +1,12 @@
+
+---
+layout: default
+---
+
+<h1>Jekyll Post Test</h1>
+
+<p>Number of posts found: {{ site.posts.size }}</p>
+
+{% for post in site.posts %}
+  <p>{{ post.title }} — {{ post.date }}</p>
+{% endfor %}
