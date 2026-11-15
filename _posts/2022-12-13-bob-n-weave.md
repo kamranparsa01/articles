@@ -3,6 +3,7 @@ title: "Bob 'n Weave"
 slug: "bob-n-weave"
 date: "2022-12-13 23:47:03"
 status: "publish"
+published: true
 categories: []
 tags: []
 originalUrl: "https://kamranparsa.com/published-works/bob-n-weave/"
