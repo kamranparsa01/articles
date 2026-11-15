@@ -1,20 +1,126 @@
+
 ---
-layout: default
-title: Writing Archive
 ---
 
-<h1>Writing Archive</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Writing Archive</title>
+  <style>
+    * { box-sizing: border-box; }
 
-<p>A collection of essays, thoughts, and other writings.</p>
+    body {
+      margin: 0;
+      background: #faf9f6;
+      color: #292820;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.75;
+    }
 
-<hr>
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 90px 28px;
+    }
 
-<h2>Recent Writing</h2>
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #898579;
+    }
 
-{% for post in site.posts %}
-  <article>
-    <p>{{ post.date | date: "%B %d, %Y" }}</p>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt }}</p>
-  </article>
-{% endfor %}
+    h1 {
+      font-size: 46px;
+      font-weight: normal;
+      letter-spacing: -1.5px;
+      margin: 18px 0 8px;
+    }
+
+    .intro {
+      color: #777267;
+      font-size: 17px;
+      margin-bottom: 55px;
+    }
+
+    .section-title {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #898579;
+      border-bottom: 1px solid #dedbd2;
+      padding-bottom: 12px;
+    }
+
+    article {
+      padding: 24px 0;
+      border-bottom: 1px solid #e7e4dc;
+    }
+
+    .date {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #999387;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    article h2 {
+      font-size: 23px;
+      font-weight: normal;
+      margin: 5px 0;
+    }
+
+    a {
+      color: #292820;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #9b7653;
+    }
+
+    article p:last-child {
+      color: #777267;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    footer {
+      margin-top: 65px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #aaa599;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding-top: 55px; }
+      h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="eyebrow">Personal Archive</div>
+    <h1>Writing Archive</h1>
+    <p class="intro">A collection of essays, thoughts, and other writings.</p>
+
+    <div class="section-title">Selected Writing</div>
+
+    {% for post in site.posts %}
+    <article>
+      <div class="date">{{ post.date | date: "%B %d, %Y" }}</div>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+    </article>
+    {% endfor %}
+
+    <footer>© 2026 · WRITING ARCHIVE</footer>
+  </main>
+</body>
+</html>
