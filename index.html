@@ -1,21 +1,20 @@
- body {
-      max-width: 760px;
-      margin: 80px auto;
-      padding: 0 24px;
-      font-family: Georgia, serif;
-      color: #292929;
-      line-height: 1.7;
-    }
-    h1 { font-size: 38px; }
-    p { color: #666; }
-    a { color: #292929; }
-  </style>
-</head>
-<body>
-  <h1>My Writing Archive</h1>
-  <p>A collection of my essays, thoughts, and writing.</p>
-  <hr>
-  <h2>Welcome</h2>
-  <p>My writing archive is currently being organized. Check back soon.</p>
-</body>
-</html>
+---
+layout: default
+title: Writing Archive
+---
+
+<h1>Writing Archive</h1>
+
+<p>A collection of essays, thoughts, and other writings.</p>
+
+<hr>
+
+<h2>Recent Writing</h2>
+
+{% for post in site.posts %}
+  <article>
+    <p>{{ post.date | date: "%B %d, %Y" }}</p>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p>{{ post.excerpt }}</p>
+  </article>
+{% endfor %}
