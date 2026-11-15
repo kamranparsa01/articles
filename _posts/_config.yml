@@ -1,5 +1,0 @@
-title: My Writing Archive
-description: A collection of my writing.
-theme: minima
-markdown: kramdown
-permalink: /:categories/:year/:month/:day/:title/
